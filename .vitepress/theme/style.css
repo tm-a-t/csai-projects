@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@source '**/*.vue';
+
+
+@font-face {
+    font-family: 'Even Mono';
+    src: url('/fonts/EvenMono-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@theme {
+    --font-sans: 'Instrument Sans Variable', Arial, Helvetica, sans-serif;
+    --font-display: 'Even Mono', serif;
+}
+
+body {
+    @apply text-xl bg-zinc-950 text-white;
+}
+
+@utility link {
+    @apply bg-white text-zinc-950 cursor-pointer;
+
+    &:hover {
+        @apply bg-green-300;
+    }
+}
+
+.content {
+    @apply mt-8 leading-[1.45] grid grid-cols-subgrid col-span-full;
+
+    & > div {
+        @apply grid grid-cols-subgrid col-span-full;
+
+        & > * {
+            @apply sm:col-start-2 sm:col-end-11 md:col-start-3 md:col-end-11 lg:col-start-4 lg:col-end-10;
+        }
+    }
+
+    * {
+        @apply col-span-full;
+    }
+
+    p:not(:first-child) {
+        @apply mt-4;
+
+        h2 + & {
+            @apply mt-2;
+        }
+    }
+
+    h2 {
+        @apply font-display mt-16;
+    }
+
+    img {
+        @apply mt-8 mb-4 sm:col-start-2 sm:col-end-12 w-full;
+    }
+
+    ul {
+        @apply list-disc;
+    }
+
+    ol {
+        @apply list-decimal;
+    }
+
+    ul, ol {
+        @apply ml-6;
+    }
+
+    li {
+        @apply mt-2;
+    }
+
+    a {
+        @apply underline underline-offset-4 hover:text-green-300;
+    }
+
+    mjx-container>svg {
+        @apply inline-block;
+    }
+}
+
+.filled-line-breaks {
+    @apply inline-block;
+    clip-path: inset(0);
+
+    > * {
+        box-shadow: 0 0.3rem var(--tw-shadow-color);
+
+        @apply shadow-white hover:shadow-green-300;
+    }
+}
+
+/*.filled-line-breaks {*/
+/*    @apply box-decoration-clone;*/
+/*    clip-path: inset(0 -100vw -1rem 0);*/
+
+/*    &:first-child {*/
+/*        @apply pb-2;*/
+/*    }*/
+/*}*/
