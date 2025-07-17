@@ -52,7 +52,7 @@ onMounted(() => {
 <template>
   <div class="col-span-full">
     <input ref="input" v-model="inputValue"
-           class="text-2xl sm:text-4xl w-full placeholder:text-zinc-500 focus:outline-0" type="text"
+           class="text-2xl sm:text-4xl w-full placeholder:text-zinc-600 focus:outline-0" type="text"
            placeholder="Search...">
 
     <div class="flex flex-col gap-y-4 mt-4">
@@ -100,8 +100,7 @@ onMounted(() => {
         </ul>
       </div>
 
-      <div class="" v-if="filteredProjects.length">
-        <h2 class="font-display mt-16 mb-2">Projects</h2>
+      <div class="sm:mt-2" v-if="filteredProjects.length">
         <ProjectList :projects="filteredProjects"/>
       </div>
     </div>

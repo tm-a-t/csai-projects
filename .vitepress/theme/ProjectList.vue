@@ -6,11 +6,11 @@ defineProps<{ projects: ProjectInfo[] }>();
 
 <template>
   <div class="flex flex-col gap-y-4 col-span-12">
-    <a v-for="project in projects" :href="project.path" class="complex-link">
-      <h4 class="font-display"><span class="complex-link-piece">{{ project.data.title }}</span></h4>
-      <div class="complex-link-piece inline">
-        {{ project.data.students.join(", ") }}.
-        {{ project.data.term }} {{ project.data.type }}
+    <a v-for="project in projects" :href="project.path" class="complex-link text-2xl sm:text-4xl sm:leading-[1.2]">
+      <h4 class=""><span class="complex-link-piece">{{ project.data.title }}</span></h4>
+      <div class="complex-link-piece inline italic">
+        {{ project.data.students.join(", ") }}
+<!--        {{ project.data.term }} {{ project.data.type }}-->
       </div>
     </a>
   </div>

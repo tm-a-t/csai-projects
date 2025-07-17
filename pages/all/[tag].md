@@ -9,4 +9,4 @@ project: false
 <h1 class="font-display">{{ $params.title }}</h1>
 </div>
 
-<ProjectList :projects="$params.projects" class="mt-6"/>
+<ProjectList :projects="$params.projects" class="mt-2 sm:mt-4"/>
