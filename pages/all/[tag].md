@@ -6,7 +6,7 @@ project: false
 </script>
 
 <div class="col-span-full">
-<h1 class="text-2xl sm:text-4xl">{{ $params.title }}</h1>
+<h1 class="font-display">{{ $params.title }}</h1>
 </div>
 
-<ProjectList :projects="$params.projects" class="mt-12"/>
+<ProjectList :projects="$params.projects" class="mt-6"/>

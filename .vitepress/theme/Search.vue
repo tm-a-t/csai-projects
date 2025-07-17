@@ -100,7 +100,8 @@ onMounted(() => {
         </ul>
       </div>
 
-      <div class="">
+      <div class="" v-if="filteredProjects.length">
+        <h2 class="font-display mt-16 mb-2">Projects</h2>
         <ProjectList :projects="filteredProjects"/>
       </div>
     </div>

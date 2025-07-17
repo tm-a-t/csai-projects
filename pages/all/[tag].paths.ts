@@ -6,7 +6,7 @@ export default {
             projects.map(project => project.data.term)
                 .map(term => generatePathData(term, term + ' Projects', filterByTag('term', term))),
             projects.map(project => project.data.type)
-                .map(type => generatePathData(type, type + ' List', filterByTag('type', type))),
+                .map(type => generatePathData(type, type, filterByTag('type', type))),
             projects.flatMap(project => [...project.data.mentors, ...project.data.students])
                 .map(person => generatePathData(person, 'Projects By ' + person, filterPeople(person))),
             projects.flatMap(project => project.data.keywords)
