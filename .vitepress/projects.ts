@@ -4,7 +4,7 @@ import matter from 'gray-matter';
 
 const pagesDir = 'pages';
 
-type ProjectInfo = {
+export type ProjectInfo = {
     path: string;
     data: { [key: string]: any };
 }
@@ -19,6 +19,6 @@ const projects: ProjectInfo[] = fs
             data: parsed.data,
         };
     })
-    .filter(page => !page.data.home);
+    .filter(page => page.data.project !== false);
 
 export default projects;

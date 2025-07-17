@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import {useData} from 'vitepress';
+import {Content, useData} from 'vitepress';
 import Feed from './Feed.vue';
+import TagLink from './TagLink.vue';
 
-const {site, frontmatter} = useData();
+const {page, frontmatter} = useData();
 </script>
 
 <template>
@@ -35,6 +36,9 @@ const {site, frontmatter} = useData();
 
         <Feed/>
       </template>
+      <template v-else-if="frontmatter.project === false || page.isNotFound">
+        <Content class="grid grid-cols-subgrid col-span-full [&>div]:grid [&>div]:grid-cols-subgrid [&>div]:col-span-full"/>
+      </template>
       <template v-else>
         <div class="col-span-full xl:col-span-8 pt-1.5 mb-8 xl:mb-0">
           <h1 class="text-5xl md:text-7xl font-medium tracking-tight">{{ frontmatter.title }}</h1>
@@ -43,26 +47,20 @@ const {site, frontmatter} = useData();
         <div class="col-span-6 md:col-span-4 xl:col-span-2 font-display flex flex-col">
           <span>Project</span>
           <div class="flex flex-col">
-            <span v-for="name in frontmatter.students" class="filled-line-breaks">
-                <a class="link">{{ name }}</a>
-            </span>
-            <span class="filled-line-breaks"><a class="link">{{ frontmatter.type }}</a></span>
-            <span class="filled-line-breaks"><a class="link">{{ frontmatter.term }}</a></span>
+            <TagLink v-for="name in frontmatter.students" :name="name"/>
+            <TagLink :name="frontmatter.type"/>
+            <TagLink :name="frontmatter.term"/>
           </div>
         </div>
 
         <div class="col-span-6 md:col-span-4 xl:col-span-2 font-display flex flex-col gap-3">
           <div class="flex flex-col">
             Mentors
-            <span v-for="name in frontmatter.mentors" class="filled-line-breaks">
-              <a class="link">{{ name }}</a>
-            </span>
+            <TagLink v-for="name in frontmatter.mentors" :name="name"/>
           </div>
           <div class="flex flex-wrap gap-x-0.5">
             <span class="w-full">Keywords</span>
-            <span v-for="keyword in frontmatter.keywords" class="filled-line-breaks">
-              <a class="link">{{ keyword }}</a>
-            </span>
+            <TagLink v-for="name in frontmatter.keywords" :name="name"/>
           </div>
         </div>
 
