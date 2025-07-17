@@ -15,7 +15,7 @@ const projects: ProjectInfo[] = fs
         const filePath = path.join(pagesDir, file);
         const parsed = matter(fs.readFileSync(filePath));
         return {
-            path: path.basename(filePath, '.md'),
+            path: '/' + path.basename(filePath, '.md'),
             data: parsed.data,
         };
     })

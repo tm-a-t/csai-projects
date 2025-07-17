@@ -19,10 +19,18 @@ body {
 }
 
 @utility link {
-    @apply bg-white text-zinc-950 cursor-pointer;
+    @apply cursor-pointer;
 
     &:hover {
-        @apply bg-green-300;
+        @apply bg-green-300 text-zinc-950;
+    }
+}
+
+@utility complex-link {
+    @apply cursor-pointer;
+
+    &:hover .complex-link-piece {
+        @apply bg-green-300 text-zinc-950;
     }
 }
 

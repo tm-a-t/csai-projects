@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import {Content, useData} from 'vitepress';
-import Feed from './Feed.vue';
+import ProjectTiles from './ProjectTiles.vue';
 import TagLink from './TagLink.vue';
+import ProjectList from './ProjectList.vue';
+import Search from './Search.vue';
 
 const {page, frontmatter} = useData();
 </script>
@@ -12,29 +14,31 @@ const {page, frontmatter} = useData();
       <nav class="col-span-full grid grid-cols-subgrid mt-8 mb-32 border-b-2 pb-1">
         <div class="col-span-6 sm:col-span-8 font-display">
             <h4>
-              <a href="/" class="hover:bg-green-300 hover:text-zinc-950">CSAI Projects</a>
+              <a href="/" class="link">CSAI Projects</a>
             </h4>
         </div>
 
         <div class="col-span-6 sm:col-span-4 font-display">
-          <a href="https://lp.jetbrains.com/academy/csai-program/" target="_blank" class="hover:bg-green-300 hover:text-zinc-950">Program ></a>
+          <a href="https://lp.jetbrains.com/academy/csai-program/" target="_blank" class="link">Program ></a>
         </div>
       </nav>
 
       <template v-if="frontmatter.home">
         <div class="col-span-full sm:col-span-8 mb-24">
           <h1 class="text-2xl sm:text-4xl">These projects were built by students of BSc in&nbsp;Computer Science and Artificial Intelligence</h1>
-          <button class="mt-4 inline-block font-display">Search ></button>
+          <a href="/all" class="mt-4 inline-block font-display link">Search ></a>
 <!--          <button class="mt-6 px-2 py-1 text-zinc-500 border rounded inline-block">Search keywords, students, projects</button>-->
 
 <!--          <span class="text-2xl sm:text-4xl text-green-300 underline underline-offset-5">Search keywords, students, projects</span>-->
-          <!--          <input class="text-2xl sm:text-4xl w-full placeholder:text-zinc-600 focus:outline-0" type="text" placeholder="Search keywords, students, projects...">-->
 <!--          <div class="font-display mt-8">Search keywords, students, projects...</div>-->
 
         </div>
         <div class="col-span-full"></div>
 
-        <Feed/>
+        <ProjectTiles/>
+      </template>
+      <template v-if="frontmatter.search">
+        <Search/>
       </template>
       <template v-else-if="frontmatter.project === false || page.isNotFound">
         <Content class="grid grid-cols-subgrid col-span-full [&>div]:grid [&>div]:grid-cols-subgrid [&>div]:col-span-full"/>
@@ -75,7 +79,7 @@ const {page, frontmatter} = useData();
         <div class="col-span-full mt-16 sm:mt-48 mb-4 border-b-2 pb-1">
           <h4 class="font-display">All projects</h4>
         </div>
-        <Feed/>
+        <ProjectTiles/>
       </template>
     </div>
   </div>
