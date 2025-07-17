@@ -21,8 +21,15 @@ const {site, frontmatter} = useData();
       </nav>
 
       <template v-if="frontmatter.home">
-        <div class="col-span-full sm:col-span-8 mb-16">
+        <div class="col-span-full sm:col-span-8 mb-24">
           <h1 class="text-2xl sm:text-4xl">These projects were built by students of BSc in&nbsp;Computer Science and Artificial Intelligence</h1>
+          <button class="mt-4 inline-block font-display">Search ></button>
+<!--          <button class="mt-6 px-2 py-1 text-zinc-500 border rounded inline-block">Search keywords, students, projects</button>-->
+
+<!--          <span class="text-2xl sm:text-4xl text-green-300 underline underline-offset-5">Search keywords, students, projects</span>-->
+          <!--          <input class="text-2xl sm:text-4xl w-full placeholder:text-zinc-600 focus:outline-0" type="text" placeholder="Search keywords, students, projects...">-->
+<!--          <div class="font-display mt-8">Search keywords, students, projects...</div>-->
+
         </div>
         <div class="col-span-full"></div>
 
@@ -67,7 +74,7 @@ const {site, frontmatter} = useData();
           <Content class="content"/>
         </article>
 
-        <div class="col-span-full mt-24 mb-4 border-b-2 pb-1">
+        <div class="col-span-full mt-16 sm:mt-48 mb-4 border-b-2 pb-1">
           <h4 class="font-display">All projects</h4>
         </div>
         <Feed/>
