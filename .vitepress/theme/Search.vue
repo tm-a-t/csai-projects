@@ -17,14 +17,17 @@ const people = uniqueValues(site.value.themeConfig.projects.flatMap(p => [...p.d
 const filteredPeople = computed(() => filtered(people));
 
 const types = uniqueValues(site.value.themeConfig.projects.map(p => p.data.type))
-    .sort(compareLastWord);
+    .sort(compareAlphabetically);
 const filteredTypes = computed(() => filtered(types));
 
 const terms = uniqueValues(site.value.themeConfig.projects.map(p => p.data.term))
-  .sort(compareAlphabetically);
+  .sort(compareLastWord);
 const filteredTerms = computed(() => filtered(terms));
 
-const filteredProjects = computed(() => site.value.themeConfig.projects.filter(p => p.data.title.toLowerCase().includes(inputValue.value.toLowerCase())))
+const sortedProjects = [...site.value.themeConfig.projects]
+    .sort((a, b) => compareAlphabetically(a.data.title, b.data.title));
+console.log(sortedProjects, site.value.themeConfig.projects)
+const filteredProjects = computed(() => sortedProjects.filter(p => p.data.title.toLowerCase().includes(inputValue.value.toLowerCase())))
 
 function uniqueValues(array: Array<string>): Array<string> {
   return [...new Set(array)];
@@ -37,7 +40,7 @@ function compareAlphabetically(a: string, b: string) {
 function compareLastWord(a: string, b: string) {
   const aWords = a.split(' ');
   const bWords = b.split(' ');
-  return aWords[aWords.length - 1].localeCompare(bWords[bWords.length - 1]);
+  return aWords[aWords.length - 1].localeCompare(bWords[bWords.length - 1]) || compareAlphabetically(a, b);
 }
 
 function filtered(array: Array<string>) {
@@ -52,16 +55,16 @@ onMounted(() => {
 <template>
   <div class="col-span-full">
     <input ref="input" v-model="inputValue"
-           class="text-2xl sm:text-4xl w-full placeholder:text-zinc-600 focus:outline-0" type="text"
-           placeholder="Search...">
+           class="text-5xl sm:text-7xl font-medium tracking-tight -mx-0.5 w-full placeholder:text-zinc-700 focus:outline-0 focus:ring-0" type="text"
+           placeholder="Search…">
 
-    <div class="flex flex-col gap-y-4 mt-4">
+    <div class="flex flex-col gap-y-2 mt-4 sm:mt-4">
       <div v-if="filteredKeywords.length">
         <ul class="flex flex-wrap gap-x-2">
           <li>
             <h2 class="font-display">Keywords:</h2>
           </li>
-          <li class="" v-for="keyword in filteredKeywords">
+          <li class="" v-for="keyword in [...filteredKeywords]">
             <a :href="'/all/' + keyword" class="link">{{ keyword }}</a>
           </li>
         </ul>
@@ -78,34 +81,29 @@ onMounted(() => {
         </ul>
       </div>
 
-      <div v-if="filteredTypes.length">
+      <div v-if="filteredTypes.length || filteredTerms.length">
         <ul class="flex flex-wrap gap-x-2">
           <li>
-            <h2 class="font-display">Types:</h2>
+            <h2 class="font-display">Categories:</h2>
           </li>
-          <li class="" v-for="type in filteredTypes">
+          <li class="" v-for="type in [...filteredTypes, ...filteredTerms]">
             <a :href="'/all/' + type" class="link">{{ type }}</a>
           </li>
         </ul>
       </div>
 
-      <div v-if="filteredTerms.length">
-        <ul class="flex flex-wrap gap-x-2">
-          <li>
-            <h2 class="font-display">Terms:</h2>
-          </li>
-          <li class="" v-for="term in filteredTerms">
-            <a :href="'/all/' + term" class="link">{{ term }}</a>
-          </li>
-        </ul>
-      </div>
+      <div v-if="filteredKeywords.length || filteredPeople.length || filteredTypes.length || filteredTerms.length"
+           class="hidden sm:block sm:my-4"></div>
 
-      <div class="sm:mt-2" v-if="filteredProjects.length">
+      <div v-if="filteredProjects.length">
+        <h2 class="sm:hidden font-display mt-8 mb-2 sm:mb-2" v-if="inputValue.length === 0">Projects</h2>
         <ProjectList :projects="filteredProjects"/>
       </div>
+
+      <div v-if="filteredKeywords.length + filteredPeople.length + filteredTypes.length + filteredTerms.length + filteredProjects.length === 0">
+        <span class="font-display">Nothing found.</span>
+      </div>
     </div>
-
-
   </div>
 </template>
 

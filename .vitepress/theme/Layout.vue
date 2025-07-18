@@ -9,7 +9,7 @@ const {page, frontmatter} = useData();
 </script>
 
 <template>
-  <div class="flex justify-center">
+  <div class="flex justify-center pb-4">
     <div class="grid grid-cols-12 gap-x-8 max-w-360 px-2 w-full">
       <nav class="col-span-full grid grid-cols-subgrid mt-8 mb-32 border-b-2 pb-1">
         <div class="col-span-6 sm:col-span-8 font-display">
@@ -19,18 +19,16 @@ const {page, frontmatter} = useData();
         </div>
 
         <div class="col-span-6 sm:col-span-4 font-display">
-          <a href="https://lp.jetbrains.com/academy/csai-program/" target="_blank" class="link">Program ></a>
+          <a href="/all" class="link">Search</a>
         </div>
       </nav>
 
       <template v-if="frontmatter.home">
         <div class="col-span-full sm:col-span-8 mb-24">
           <h1 class="text-2xl sm:text-4xl">These projects were built by students of BSc in&nbsp;Computer Science and Artificial Intelligence</h1>
-          <a href="/all" class="mt-4 inline-block font-display link">Search ></a>
-<!--          <button class="mt-6 px-2 py-1 text-zinc-500 border rounded inline-block">Search keywords, students, projects</button>-->
-
-<!--          <span class="text-2xl sm:text-4xl text-green-300 underline underline-offset-5">Search keywords, students, projects</span>-->
-<!--          <div class="font-display mt-8">Search keywords, students, projects...</div>-->
+          <div class="mt-4 flex gap-x-8">
+            <a href="https://lp.jetbrains.com/academy/csai-program/" target="_blank" class="font-display link">About CSAI ></a>
+          </div>
 
         </div>
         <div class="col-span-full"></div>
@@ -45,7 +43,7 @@ const {page, frontmatter} = useData();
       </template>
       <template v-else>
         <div class="col-span-full xl:col-span-8 pt-1.5 mb-8 xl:mb-0">
-          <h1 class="text-5xl md:text-7xl font-medium tracking-tight">{{ frontmatter.title }}</h1>
+          <h1 class="text-5xl md:text-7xl font-medium tracking-tight -mx-0.5">{{ frontmatter.title }}</h1>
         </div>
 
         <div class="col-span-6 md:col-span-4 xl:col-span-2 font-display flex flex-col">
