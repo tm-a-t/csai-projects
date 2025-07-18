@@ -25,8 +25,10 @@ const {page, frontmatter} = useData();
       <template v-if="frontmatter.home">
         <div class="col-span-full sm:col-span-8 mb-24">
           <h1 class="text-2xl sm:text-4xl">These projects were built by students of BSc in&nbsp;Computer Science and Artificial Intelligence.</h1>
-          <div class="mt-4 flex gap-x-8">
-            <a href="https://lp.jetbrains.com/academy/csai-program/" target="_blank" class="font-display link">About CSAI ></a>
+          <div class="flex flex-wrap mt-2 gap-x-2 sm:mt-4 sm:gap-x-3">
+            <a href="/all" class="font-display link">Search></a>
+            <a href="https://github.com/tm-a-t/csai-projects" target="_blank" class="font-display link">Source></a>
+            <a href="https://lp.jetbrains.com/academy/csai-program/" target="_blank" class="font-display link">CSAI></a>
           </div>
 
         </div>
@@ -37,8 +39,14 @@ const {page, frontmatter} = useData();
       <template v-if="frontmatter.search">
         <Search/>
       </template>
-      <template v-else-if="frontmatter.project === false || page.isNotFound">
-        <Content class="grid grid-cols-subgrid col-span-full [&>div]:grid [&>div]:grid-cols-subgrid [&>div]:col-span-full"/>
+      <template v-if="page.isNotFound">
+        <div class="col-span-full">
+          <span class="text-7xl mr-4">404.</span>
+          <a href="/" class="font-display link">Home></a>
+        </div>
+      </template>
+      <template v-else-if="frontmatter.project === false">
+        <Content class="grid grid-cols-subgrid col-span-full [&>*]:grid [&>*]:grid-cols-subgrid [&>*]:col-span-full"/>
       </template>
       <template v-else>
         <div class="col-span-full xl:col-span-8 pt-1.5 mb-8 xl:mb-0">
