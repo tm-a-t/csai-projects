@@ -2,7 +2,6 @@
 import {Content, useData} from 'vitepress';
 import ProjectTiles from './ProjectTiles.vue';
 import TagLink from './TagLink.vue';
-import ProjectList from './ProjectList.vue';
 import Search from './Search.vue';
 
 const {page, frontmatter} = useData();
@@ -25,7 +24,7 @@ const {page, frontmatter} = useData();
 
       <template v-if="frontmatter.home">
         <div class="col-span-full sm:col-span-8 mb-24">
-          <h1 class="text-2xl sm:text-4xl">These projects were built by students of BSc in&nbsp;Computer Science and Artificial Intelligence</h1>
+          <h1 class="text-2xl sm:text-4xl">These projects were built by students of BSc in&nbsp;Computer Science and Artificial Intelligence.</h1>
           <div class="mt-4 flex gap-x-8">
             <a href="https://lp.jetbrains.com/academy/csai-program/" target="_blank" class="font-display link">About CSAI ></a>
           </div>
