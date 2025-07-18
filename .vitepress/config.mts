@@ -5,7 +5,7 @@ import projects from './projects';
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
     title: 'CSAI Projects',
-    description: 'Overview of student projects',
+    description: 'Term and thesis projects by CSAI students.',
     srcDir: 'pages',
     cleanUrls: true,
     markdown: {
