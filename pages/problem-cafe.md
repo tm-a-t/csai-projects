@@ -5,7 +5,7 @@ type: Term Project
 mentors: []
 students: [ Ilia Kondakov, Svyatoslav Suglobov, Maksim Levitskii, Art Ivanov ]
 keywords: [ education, STEM, problems, database, web platform ]
-picture: /assets/problem-cafe.svg
+picture: /assets/problem-cafe.png
 pictureAlt: illustration of a person juggling papers
 ---
 
