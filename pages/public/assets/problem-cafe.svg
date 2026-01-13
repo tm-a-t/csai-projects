@@ -1,0 +1,35 @@
+<svg width="1424" height="800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1424" height="800" fill="#f3e8ff"/>
+  
+  <!-- Title -->
+  <text x="712" y="100" font-size="72" font-family="Arial, sans-serif" font-weight="bold" fill="#7c3aed" text-anchor="middle">Problem Café</text>
+  
+  <!-- Person body -->
+  <rect x="562" y="250" width="300" height="400" fill="#a855f7" stroke="#7c3aed" stroke-width="3"/>
+  
+  <!-- Head -->
+  <circle cx="712" cy="225" r="75" fill="#a855f7" stroke="#7c3aed" stroke-width="3"/>
+  
+  <!-- Left arm -->
+  <polygon points="562,350 450,450 500,500 562,450" fill="#a855f7" stroke="#7c3aed" stroke-width="2"/>
+  
+  <!-- Right arm -->
+  <polygon points="862,350 974,450 924,500 862,450" fill="#a855f7" stroke="#7c3aed" stroke-width="2"/>
+  
+  <!-- Flying papers -->
+  <rect x="300" y="200" width="80" height="80" fill="white" stroke="#7c3aed" stroke-width="2" transform="rotate(-15 340 240)"/>
+  <rect x="1000" y="180" width="80" height="80" fill="white" stroke="#7c3aed" stroke-width="2" transform="rotate(20 1040 220)"/>
+  <rect x="250" y="450" width="80" height="80" fill="white" stroke="#7c3aed" stroke-width="2" transform="rotate(-25 290 490)"/>
+  <rect x="1050" y="400" width="80" height="80" fill="white" stroke="#7c3aed" stroke-width="2" transform="rotate(18 1090 440)"/>
+  <rect x="400" y="600" width="70" height="70" fill="white" stroke="#7c3aed" stroke-width="2" transform="rotate(-10 435 635)"/>
+  <rect x="950" y="620" width="70" height="70" fill="white" stroke="#7c3aed" stroke-width="2" transform="rotate(15 985 655)"/>
+  
+  <!-- Coffee cup icon -->
+  <path d="M 620 710 L 620 750 L 680 750 L 680 710 M 600 710 L 700 710 M 685 720 Q 715 720 715 740 Q 715 755 695 755" 
+        fill="none" stroke="#7c3aed" stroke-width="3"/>
+  <ellipse cx="650" cy="710" rx="40" ry="10" fill="none" stroke="#7c3aed" stroke-width="2"/>
+  
+  <!-- Subtitle -->
+  <text x="712" y="770" font-size="32" font-family="Arial, sans-serif" fill="#7c3aed" text-anchor="middle">Collector of STEM Problems</text>
+</svg>
