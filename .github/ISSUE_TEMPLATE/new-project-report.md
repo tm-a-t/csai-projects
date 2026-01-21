@@ -1,13 +1,13 @@
 ---
 name: New project report
 about: Request a new project page
-title: ''
+title: 'Add project: '
 labels: ''
 assignees: ''
 
 ---
 
-Fill in your project data here, and the AI agent will generate a page. See other projects on the site: https://csai-projects.netlify.app/
+Fill in your project data here, and the AI agent will generate a page. For examples, see existing projects on the site.
 
 **Title**
 The formal title of your project.
