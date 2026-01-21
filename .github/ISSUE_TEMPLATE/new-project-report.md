@@ -3,7 +3,7 @@ name: New project report
 about: Request a new project page
 title: 'Add project: '
 labels: ''
-assignees: ''
+assignees: [copilot]
 
 ---
 
