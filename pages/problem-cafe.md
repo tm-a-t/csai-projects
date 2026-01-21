@@ -19,10 +19,12 @@ We defined the following SMART goal: By December 20, deploy a website equipped w
 
 Our hypotheses:
 
-- If teachers can quickly search and export problems by topics, they will spend less time on preparation because they will avoid manual search, selection, and formatting.
+- If teachers can quickly search and export problems by topics, they will spend less time on preparation because they will avoid manual search, selection, and formatting.<br>
   ⇒ Enable fast search and easy download
-- If AI fills the problem data, curators will upload problems more effectively, because review takes less time than filling data.
+- If AI fills the problem data, curators will upload problems more effectively, because review takes less time than filling data.<br>
   ⇒ Build semi-automatic upload form
+
+User stories:
 
 <img src="/assets/problem_cafe_user_story_1.png" alt="User story 1: As a teacher, I want to browse an endless feed of problems on my lesson topic so that I can quickly compile problems on my topic for students">
 
