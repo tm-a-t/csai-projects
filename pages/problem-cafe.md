@@ -9,7 +9,9 @@ picture: /assets/problem_cafe_cover.png
 pictureAlt: search interface showing "hard number theory problems for 9 grade"
 ---
 
-High-quality contest and training problems are mostly stored in unstructured formats — PDFs, scans, and inconsistent LaTeX — which makes them difficult to search, filter, translate, and reuse. As a result, creating targeted problem sets requires significant manual effort and does not scale.
+High-quality contest and training problems are mostly stored in unstructured formats — PDFs, scans, and inconsistent LaTeX — which makes them difficult to search, filter, translate, and reuse.
+
+As a result, creating targeted problem sets requires significant manual effort and does not scale.
 
 ## Report
 
