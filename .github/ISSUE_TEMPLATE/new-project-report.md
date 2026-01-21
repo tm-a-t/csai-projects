@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-Fill in your project data here, and the AI agent will generate a page. For examples, see existing projects on the site.
+Fill in your project data here, and the AI agent will generate a page. See examples on the site.
 
 **Title**
 The formal title of your project.
