@@ -1,5 +1,5 @@
 ---
-title: Nexus. A web application for organizing students' academic life: schedule, tasks, chats, and performance analytics
+title: "Nexus. A web application for organizing students' academic life: schedule, tasks, chats, and performance analytics"
 term: Spring 2026
 type: Project Seminar Course Project
 mentors: [ Tatiana Berlenko ]
